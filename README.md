@@ -4,6 +4,7 @@
 
 ## ディレクトリ構造
 
+```sh
 src
 |
 +-- lib # ライブラリをアプリケーション用に設定して再度エクスポートしたもの
@@ -24,7 +25,7 @@ src
 | |
 | +-- Feature1 # 'Feature1' という名前の機能
 | |
-| +-- tests # テストファイル
+| +-- __tests__ # テストファイル
 | +-- api # Feature1 固有の API リクエスト関数
 | +-- assets # Feature1 固有の静的ファイル
 | +-- components # Feature1 固有のコンポーネント
@@ -46,6 +47,7 @@ src
 +-- types # 全体で使用される基本 Typescript 型
 |
 app.tsx # アプリケーションのエントリーポイント
+```
 
 ## 詳細
 
