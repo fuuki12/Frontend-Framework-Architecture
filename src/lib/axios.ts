@@ -9,7 +9,7 @@ export const fetchData = async (url: string) => {
   try {
     const response = await axios(config);
 
-    return response;
+    return response.data;
   } catch (error) {
     console.error("Error occurred while fetching data: ", error);
   }
@@ -29,7 +29,7 @@ export const postData = async (url: string, data: Data) => {
   try {
     const response = await axios(config);
 
-    return response;
+    return response.data;
   } catch (error) {
     console.error("Error occurred while posting data: ", error);
   }
