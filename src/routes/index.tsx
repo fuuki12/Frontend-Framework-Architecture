@@ -1,4 +1,3 @@
-// TODO
 import { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
@@ -6,19 +5,9 @@ import { Spinner } from "@/components/Elements";
 import { MainLayout } from "@/components/Layout";
 import { lazyImport } from "@/utils/lazyImport";
 
-const { DiscussionsRoutes } = lazyImport(
-  () => import("@/features/discussions"),
-  "DiscussionsRoutes"
+const [DiscussionsRoutes, Dashboard, Profile, Users] = lazyImport(() =>
+  Promise.all([import("@/features/UserProfile/api/getUser")])
 );
-const { Dashboard } = lazyImport(
-  () => import("@/features/UserProfile"),
-  "Dashboard"
-);
-const { Profile } = lazyImport(
-  () => import("@/features/UserProfile"),
-  "Profile"
-);
-const { Users } = lazyImport(() => import("@/features/UserProfile"), "Users");
 
 const App = () => {
   return (
